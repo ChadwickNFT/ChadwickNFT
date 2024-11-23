@@ -126,7 +126,7 @@ const Home = () => {
                 viewport={{ once: true }}
               >
                 <img
-                  src={`/images/bw/thumbnails/chadwicknft_photography-${num}.jpg`}
+                  src={`${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-${num}.jpg`}
                   alt={`Featured work ${num}`}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
