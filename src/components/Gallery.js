@@ -10,7 +10,7 @@ function Gallery() {
   // B&W photography collection
   const images = Array.from({ length: 17 }, (_, i) => ({
     id: i + 1,
-    src: `/images/bw/thumbnails/chadwicknft_photography-${i + 1}.jpg`,
+    src: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-${i + 1}.jpg`,
     category: 'B&W',
     title: `Black & White ${i + 1}`,
   }));

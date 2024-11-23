@@ -11,7 +11,7 @@ const ImageCarousel = ({ onSlideChange }) => {
   // Initialize images
   useEffect(() => {
     const bwImages = Array.from({ length: 17 }, (_, i) => ({
-      src: `/images/bw/thumbnails/chadwicknft_photography-${i + 1}.jpg`,
+      src: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-${i + 1}.jpg`,
       route: '/bw'
     }));
 
