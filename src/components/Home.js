@@ -29,21 +29,10 @@ const Home = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.3 }}
           >
-            <div className="relative">
-              <h1 className={`text-8xl sm:text-9xl font-display font-bold text-gold ${isPulsing ? 'animate-pulse-quick' : ''}`}>
-                CHADWICK
-              </h1>
-              <span 
-                className={`absolute text-base sm:text-xl font-black text-nft-glow-fast ${isPulsing ? 'animate-pulse-quick' : ''}`}
-                style={{
-                  left: '100%',
-                  bottom: '0.1em',
-                  marginLeft: '0.5rem'
-                }}
-              >
-                NFT
-              </span>
-            </div>
+            <h1 className="text-8xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-gold to-aquamarine">
+              CHADWICK
+            </h1>
+            <span className="text-sm text-gold ml-2 mt-8">v2.0</span>
           </motion.div>
 
           {/* Carousel in exact same center position */}
