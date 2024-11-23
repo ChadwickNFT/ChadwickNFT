@@ -24,7 +24,7 @@ const Home = () => {
         <div className="h-full flex flex-col items-center justify-center relative">
           {/* CHADWICK text positioned higher */}
           <motion.div
-            className="absolute sm:top-[40%] top-[35%] -translate-y-1/2 z-0 flex items-center justify-center w-full px-4 sm:px-0"
+            className="absolute sm:top-[40%] top-[25%] -translate-y-1/2 z-0 flex items-center justify-center w-full px-4 sm:px-0"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.3 }}
@@ -49,7 +49,7 @@ const Home = () => {
 
           {/* Carousel in exact same center position */}
           <motion.div
-            className="absolute sm:top-1/2 top-[45%] -translate-y-1/2 w-full flex items-center justify-center z-10 px-4 sm:px-0"
+            className="absolute sm:top-1/2 top-[35%] -translate-y-1/2 w-full flex items-center justify-center z-10 px-4 sm:px-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.3 }}
