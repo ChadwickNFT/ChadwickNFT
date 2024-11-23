@@ -24,21 +24,22 @@ const Home = () => {
         <div className="h-full flex flex-col items-center justify-center relative">
           {/* CHADWICK text positioned higher */}
           <motion.div
-            className="absolute top-[40%] -translate-y-1/2 z-0 flex items-center justify-center"
+            className="absolute top-[40%] -translate-y-1/2 z-0 flex items-center justify-center w-full px-4 sm:px-0"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.3 }}
           >
             <div className="relative">
-              <h1 className={`text-8xl sm:text-9xl font-display font-bold text-gold ${isPulsing ? 'animate-pulse-quick' : ''}`}>
+              <h1 className={`text-6xl xs:text-7xl sm:text-8xl md:text-9xl font-display font-bold text-gold ${isPulsing ? 'animate-pulse-quick' : ''}`}>
                 CHADWICK
               </h1>
               <span 
-                className={`absolute text-base sm:text-xl font-black text-nft-glow-fast ${isPulsing ? 'animate-pulse-quick' : ''}`}
+                className={`absolute text-sm xs:text-base sm:text-xl font-black text-nft-glow-fast ${isPulsing ? 'animate-pulse-quick' : ''}`}
                 style={{
                   left: '100%',
                   bottom: '0.1em',
-                  marginLeft: '0.5rem'
+                  marginLeft: '0.25rem',
+                  whiteSpace: 'nowrap'
                 }}
               >
                 NFT
@@ -48,10 +49,10 @@ const Home = () => {
 
           {/* Carousel in exact same center position */}
           <motion.div
-            className="absolute top-1/2 -translate-y-1/2 w-full flex items-center justify-center z-10"
+            className="absolute top-1/2 -translate-y-1/2 w-full flex items-center justify-center z-10 px-4 sm:px-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.3 }}
+            transition={{ delay: 0.4, duration: 0.3 }}
           >
             <ImageCarousel onSlideChange={handleCarouselChange} />
           </motion.div>
