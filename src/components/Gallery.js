@@ -11,6 +11,7 @@ function Gallery() {
   const images = Array.from({ length: 17 }, (_, i) => ({
     id: i + 1,
     src: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-${i + 1}.jpg`,
+    fullSrc: `${process.env.PUBLIC_URL}/images/bw/chadwicknft_photography-${i + 1}.jpg`,
     category: 'B&W',
     title: `Black & White ${i + 1}`,
   }));
@@ -86,7 +87,7 @@ function Gallery() {
           >
             <div className="relative w-full max-w-6xl mx-auto">
               <img
-                src={selectedImage.src}
+                src={selectedImage.fullSrc}
                 alt={selectedImage.title}
                 className="w-full h-full object-contain border-2 border-gold/40 hover:border-gold/80 transition-colors duration-300"
               />
