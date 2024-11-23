@@ -1,0 +1,44 @@
+:root {
+  --nft-width: 0px;
+}
+
+/* NFT Glow Effect */
+.text-nft-glow, .text-nft-glow-fast {
+  color: #7FFFD4;
+  text-shadow: 
+    0 0 1px #7FFFD4,
+    0 0 2px #7FFFD4;
+  background: linear-gradient(90deg, 
+    rgba(127,255,212,0.4) 0%,
+    rgba(127,255,212,1) 50%,
+    rgba(127,255,212,0.4) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-nft-glow {
+  animation: shimmer 3s linear infinite;
+}
+
+.text-nft-glow-fast {
+  animation: shimmer 2s linear infinite, pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% center;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.85;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.2);
+  }
+}
