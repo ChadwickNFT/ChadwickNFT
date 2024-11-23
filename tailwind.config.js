@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '480px',
+      },
       colors: {
         'rich-black': '#0A0A0A',
         'dark-gray': '#1A1A1A',
