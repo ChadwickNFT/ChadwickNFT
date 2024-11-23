@@ -11,36 +11,36 @@ const BWGallery = () => {
       id: 13,
       title: 'Portrait 1',
       src: {
-        thumbnail: '/images/bw/thumbnails/chadwicknft_photography-13.jpg',
-        medium: '/images/bw/medium/chadwicknft_photography-13.jpg',
-        large: '/images/bw/large/chadwicknft_photography-13.jpg',
+        thumbnail: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-13.jpg`,
+        medium: `${process.env.PUBLIC_URL}/images/bw/medium/chadwicknft_photography-13.jpg`,
+        large: `${process.env.PUBLIC_URL}/images/bw/large/chadwicknft_photography-13.jpg`,
       }
     },
     {
       id: 12,
       title: 'Portrait 2',
       src: {
-        thumbnail: '/images/bw/thumbnails/chadwicknft_photography-12.jpg',
-        medium: '/images/bw/medium/chadwicknft_photography-12.jpg',
-        large: '/images/bw/large/chadwicknft_photography-12.jpg',
+        thumbnail: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-12.jpg`,
+        medium: `${process.env.PUBLIC_URL}/images/bw/medium/chadwicknft_photography-12.jpg`,
+        large: `${process.env.PUBLIC_URL}/images/bw/large/chadwicknft_photography-12.jpg`,
       }
     },
     {
       id: 8,
       title: 'Portrait 3',
       src: {
-        thumbnail: '/images/bw/thumbnails/chadwicknft_photography-8.jpg',
-        medium: '/images/bw/medium/chadwicknft_photography-8.jpg',
-        large: '/images/bw/large/chadwicknft_photography-8.jpg',
+        thumbnail: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-8.jpg`,
+        medium: `${process.env.PUBLIC_URL}/images/bw/medium/chadwicknft_photography-8.jpg`,
+        large: `${process.env.PUBLIC_URL}/images/bw/large/chadwicknft_photography-8.jpg`,
       }
     },
     {
       id: 7,
       title: 'Portrait 4',
       src: {
-        thumbnail: '/images/bw/thumbnails/chadwicknft_photography-7.jpg',
-        medium: '/images/bw/medium/chadwicknft_photography-7.jpg',
-        large: '/images/bw/large/chadwicknft_photography-7.jpg',
+        thumbnail: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-7.jpg`,
+        medium: `${process.env.PUBLIC_URL}/images/bw/medium/chadwicknft_photography-7.jpg`,
+        large: `${process.env.PUBLIC_URL}/images/bw/large/chadwicknft_photography-7.jpg`,
       }
     },
     // Other photos
@@ -48,117 +48,117 @@ const BWGallery = () => {
       id: 1,
       title: 'Photography 1',
       src: {
-        thumbnail: '/images/bw/thumbnails/chadwicknft_photography-1.jpg',
-        medium: '/images/bw/medium/chadwicknft_photography-1.jpg',
-        large: '/images/bw/large/chadwicknft_photography-1.jpg',
+        thumbnail: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-1.jpg`,
+        medium: `${process.env.PUBLIC_URL}/images/bw/medium/chadwicknft_photography-1.jpg`,
+        large: `${process.env.PUBLIC_URL}/images/bw/large/chadwicknft_photography-1.jpg`,
       }
     },
     {
       id: 2,
       title: 'Photography 2',
       src: {
-        thumbnail: '/images/bw/thumbnails/chadwicknft_photography-2.jpg',
-        medium: '/images/bw/medium/chadwicknft_photography-2.jpg',
-        large: '/images/bw/large/chadwicknft_photography-2.jpg',
+        thumbnail: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-2.jpg`,
+        medium: `${process.env.PUBLIC_URL}/images/bw/medium/chadwicknft_photography-2.jpg`,
+        large: `${process.env.PUBLIC_URL}/images/bw/large/chadwicknft_photography-2.jpg`,
       }
     },
     {
       id: 3,
       title: 'Photography 3',
       src: {
-        thumbnail: '/images/bw/thumbnails/chadwicknft_photography-3.jpg',
-        medium: '/images/bw/medium/chadwicknft_photography-3.jpg',
-        large: '/images/bw/large/chadwicknft_photography-3.jpg',
+        thumbnail: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-3.jpg`,
+        medium: `${process.env.PUBLIC_URL}/images/bw/medium/chadwicknft_photography-3.jpg`,
+        large: `${process.env.PUBLIC_URL}/images/bw/large/chadwicknft_photography-3.jpg`,
       }
     },
     {
       id: 4,
       title: 'Photography 4',
       src: {
-        thumbnail: '/images/bw/thumbnails/chadwicknft_photography-4.jpg',
-        medium: '/images/bw/medium/chadwicknft_photography-4.jpg',
-        large: '/images/bw/large/chadwicknft_photography-4.jpg',
+        thumbnail: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-4.jpg`,
+        medium: `${process.env.PUBLIC_URL}/images/bw/medium/chadwicknft_photography-4.jpg`,
+        large: `${process.env.PUBLIC_URL}/images/bw/large/chadwicknft_photography-4.jpg`,
       }
     },
     {
       id: 5,
       title: 'Photography 5',
       src: {
-        thumbnail: '/images/bw/thumbnails/chadwicknft_photography-5.jpg',
-        medium: '/images/bw/medium/chadwicknft_photography-5.jpg',
-        large: '/images/bw/large/chadwicknft_photography-5.jpg',
+        thumbnail: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-5.jpg`,
+        medium: `${process.env.PUBLIC_URL}/images/bw/medium/chadwicknft_photography-5.jpg`,
+        large: `${process.env.PUBLIC_URL}/images/bw/large/chadwicknft_photography-5.jpg`,
       }
     },
     {
       id: 6,
       title: 'Photography 6',
       src: {
-        thumbnail: '/images/bw/thumbnails/chadwicknft_photography-6.jpg',
-        medium: '/images/bw/medium/chadwicknft_photography-6.jpg',
-        large: '/images/bw/large/chadwicknft_photography-6.jpg',
+        thumbnail: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-6.jpg`,
+        medium: `${process.env.PUBLIC_URL}/images/bw/medium/chadwicknft_photography-6.jpg`,
+        large: `${process.env.PUBLIC_URL}/images/bw/large/chadwicknft_photography-6.jpg`,
       }
     },
     {
       id: 9,
       title: 'Photography 9',
       src: {
-        thumbnail: '/images/bw/thumbnails/chadwicknft_photography-9.jpg',
-        medium: '/images/bw/medium/chadwicknft_photography-9.jpg',
-        large: '/images/bw/large/chadwicknft_photography-9.jpg',
+        thumbnail: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-9.jpg`,
+        medium: `${process.env.PUBLIC_URL}/images/bw/medium/chadwicknft_photography-9.jpg`,
+        large: `${process.env.PUBLIC_URL}/images/bw/large/chadwicknft_photography-9.jpg`,
       }
     },
     {
       id: 10,
       title: 'Photography 10',
       src: {
-        thumbnail: '/images/bw/thumbnails/chadwicknft_photography-10.jpg',
-        medium: '/images/bw/medium/chadwicknft_photography-10.jpg',
-        large: '/images/bw/large/chadwicknft_photography-10.jpg',
+        thumbnail: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-10.jpg`,
+        medium: `${process.env.PUBLIC_URL}/images/bw/medium/chadwicknft_photography-10.jpg`,
+        large: `${process.env.PUBLIC_URL}/images/bw/large/chadwicknft_photography-10.jpg`,
       }
     },
     {
       id: 11,
       title: 'Photography 11',
       src: {
-        thumbnail: '/images/bw/thumbnails/chadwicknft_photography-11.jpg',
-        medium: '/images/bw/medium/chadwicknft_photography-11.jpg',
-        large: '/images/bw/large/chadwicknft_photography-11.jpg',
+        thumbnail: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-11.jpg`,
+        medium: `${process.env.PUBLIC_URL}/images/bw/medium/chadwicknft_photography-11.jpg`,
+        large: `${process.env.PUBLIC_URL}/images/bw/large/chadwicknft_photography-11.jpg`,
       }
     },
     {
       id: 14,
       title: 'Photography 14',
       src: {
-        thumbnail: '/images/bw/thumbnails/chadwicknft_photography-14.jpg',
-        medium: '/images/bw/medium/chadwicknft_photography-14.jpg',
-        large: '/images/bw/large/chadwicknft_photography-14.jpg',
+        thumbnail: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-14.jpg`,
+        medium: `${process.env.PUBLIC_URL}/images/bw/medium/chadwicknft_photography-14.jpg`,
+        large: `${process.env.PUBLIC_URL}/images/bw/large/chadwicknft_photography-14.jpg`,
       }
     },
     {
       id: 15,
       title: 'Photography 15',
       src: {
-        thumbnail: '/images/bw/thumbnails/chadwicknft_photography-15.jpg',
-        medium: '/images/bw/medium/chadwicknft_photography-15.jpg',
-        large: '/images/bw/large/chadwicknft_photography-15.jpg',
+        thumbnail: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-15.jpg`,
+        medium: `${process.env.PUBLIC_URL}/images/bw/medium/chadwicknft_photography-15.jpg`,
+        large: `${process.env.PUBLIC_URL}/images/bw/large/chadwicknft_photography-15.jpg`,
       }
     },
     {
       id: 16,
       title: 'Photography 16',
       src: {
-        thumbnail: '/images/bw/thumbnails/chadwicknft_photography-16.jpg',
-        medium: '/images/bw/medium/chadwicknft_photography-16.jpg',
-        large: '/images/bw/large/chadwicknft_photography-16.jpg',
+        thumbnail: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-16.jpg`,
+        medium: `${process.env.PUBLIC_URL}/images/bw/medium/chadwicknft_photography-16.jpg`,
+        large: `${process.env.PUBLIC_URL}/images/bw/large/chadwicknft_photography-16.jpg`,
       }
     },
     {
       id: 17,
       title: 'Photography 17',
       src: {
-        thumbnail: '/images/bw/thumbnails/chadwicknft_photography-17.jpg',
-        medium: '/images/bw/medium/chadwicknft_photography-17.jpg',
-        large: '/images/bw/large/chadwicknft_photography-17.jpg',
+        thumbnail: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-17.jpg`,
+        medium: `${process.env.PUBLIC_URL}/images/bw/medium/chadwicknft_photography-17.jpg`,
+        large: `${process.env.PUBLIC_URL}/images/bw/large/chadwicknft_photography-17.jpg`,
       }
     }
   ];

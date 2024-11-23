@@ -10,12 +10,27 @@ const ImageCarousel = ({ onSlideChange }) => {
 
   // Initialize images
   useEffect(() => {
-    const bwImages = Array.from({ length: 17 }, (_, i) => ({
-      src: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-${i + 1}.jpg`,
-      route: '/bw'
-    }));
+    const bwImages = Array.from({ length: 17 }, (_, i) => {
+      const src = `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-${i + 1}.jpg`;
+      const image = new Image();
+      image.src = src;
+      if (image.complete) {
+        return {
+          src,
+          route: '/bw'
+        };
+      } else {
+        image.onload = () => {
+          setImages((prevImages) => [...prevImages, { src, route: '/bw' }]);
+        };
+        image.onerror = () => {
+          console.error(`Error loading image: ${src}`);
+        };
+      }
+    });
 
-    setImages(bwImages);
+    const loadedImages = bwImages.filter((image) => image);
+    setImages(loadedImages);
   }, []);
 
   useEffect(() => {

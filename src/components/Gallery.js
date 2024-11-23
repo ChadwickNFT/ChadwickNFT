@@ -10,8 +10,8 @@ function Gallery() {
   // B&W photography collection
   const images = Array.from({ length: 17 }, (_, i) => ({
     id: i + 1,
-    src: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-${i + 1}${i < 2 ? '.JPG' : '.jpg'}`,
-    fullSrc: `${process.env.PUBLIC_URL}/images/bw/chadwicknft_photography-${i + 1}${i < 2 ? '.JPG' : '.jpg'}`,
+    src: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-${i + 1}.jpg`,
+    fullSrc: `${process.env.PUBLIC_URL}/images/bw/chadwicknft_photography-${i + 1}.jpg`,
     category: 'B&W',
     title: `Black & White ${i + 1}`,
   }));
