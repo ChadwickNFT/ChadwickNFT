@@ -30,7 +30,7 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Build
-        run: CI=false npm run build
+        run: CI=false npm run build:github
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
