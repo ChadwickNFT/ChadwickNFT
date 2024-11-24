@@ -1,0 +1,33 @@
+name: Deploy to IPFS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to IPFS
+        id: deploy
+        uses: web3-storage/add-to-web3@v2
+        with:
+          path_to_add: 'build'
+          web3_token: ${{ secrets.WEB3_STORAGE_TOKEN }}
+
+      - name: Output CID
+        run: echo "The CID is ${{ steps.deploy.outputs.cid }}"
