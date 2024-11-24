@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - fix-deployment
+      - main
 
 permissions:
   contents: read
@@ -27,10 +27,7 @@ jobs:
           node-version: '20'
 
       - name: Install Dependencies
-        run: |
-          npm install react-scripts@5.0.1
-          npm install
-          npm list react-scripts
+        run: npm ci
 
       - name: Build
         run: CI=false npm run build
