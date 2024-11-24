@@ -19,14 +19,14 @@ const ImageCarousel = ({ onSlideChange }) => {
           src,
           route: '/bw'
         };
-      } else {
-        image.onload = () => {
-          setImages((prevImages) => [...prevImages, { src, route: '/bw' }]);
-        };
-        image.onerror = () => {
-          console.error(`Error loading image: ${src}`);
-        };
       }
+      image.onload = () => {
+        setImages((prevImages) => [...prevImages, { src, route: '/bw' }]);
+      };
+      image.onerror = () => {
+        console.error(`Error loading image: ${src}`);
+      };
+      return null;
     });
 
     const loadedImages = bwImages.filter((image) => image);
