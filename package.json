@@ -1,8 +1,8 @@
 {
-  "name": "new-site",
+  "name": "chadwicknft-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://cbrwick.github.io/ChadwickNFT",
+  "homepage": "https://chadwicknft.nft.link",
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@testing-library/jest-dom": "^5.17.0",
