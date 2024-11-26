@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Iteration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html">Documentation Home</a>
+    </nav>
+    <div class="container">
+        <h1 style="background: linear-gradient(135deg, #b388ff, #7c4dff, #4a148c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 2.8rem; letter-spacing: -0.5px; margin-bottom: 1.5rem; margin-top: 0.5rem;">Circular Iteration</h1>
+
+        <div class="section">
+            <h2>Purpose</h2>
+            <p>This system provides an end-of-session documentation maintenance workflow. Unlike the Initialization Prompt (which prepares the AI for a new session), this process focuses solely on updating our documentation to reflect the latest changes and achievements. Run this after completing significant work to ensure our documentation stays current and comprehensive.</p>
+        </div>
+
+        <div class="section">
+            <h2>Documentation Refresh Prompt</h2>
+            <div class="code-container">
+                <div class="code-block">
+                    <code>I need you to help me update our documentation based on today's session. Here's what I need:
+
+1. First, review the Developer Overview (developer_overview.html):
+   - Update the project description if our goals or scope have evolved
+   - Add any new technical components or dependencies
+   - Refresh the implementation details with our latest approaches
+   - Update the current status and next steps
+
+2. Then, create a new Recent Methods entry (recent_methods_X.html):
+   - Summarize today's key achievements and changes
+   - Document any challenges we encountered and how we solved them
+   - List any important decisions or architectural changes
+   - Include any new patterns or approaches we developed
+   - Add code snippets for significant changes
+   - Link to relevant files and PRs
+
+3. Finally, ensure all documentation maintains:
+   - Our consistent styling and formatting
+   - Clear navigation between pages
+   - Up-to-date cross-references
+   - Proper version history
+
+Please proceed with these updates while maintaining our established documentation standards and visual design.</code>
+                    <button class="copy-button" onclick="copyToClipboard(this)" data-clipboard-text="I need you to help me update our documentation based on today's session. Here's what I need:
+
+1. First, review the Developer Overview (developer_overview.html):
+   - Update the project description if our goals or scope have evolved
+   - Add any new technical components or dependencies
+   - Refresh the implementation details with our latest approaches
+   - Update the current status and next steps
+
+2. Then, create a new Recent Methods entry (recent_methods_X.html):
+   - Summarize today's key achievements and changes
+   - Document any challenges we encountered and how we solved them
+   - List any important decisions or architectural changes
+   - Include any new patterns or approaches we developed
+   - Add code snippets for significant changes
+   - Link to relevant files and PRs
+
+3. Finally, ensure all documentation maintains:
+   - Our consistent styling and formatting
+   - Clear navigation between pages
+   - Up-to-date cross-references
+   - Proper version history
+
+Please proceed with these updates while maintaining our established documentation standards and visual design.">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Usage Instructions</h2>
+            <ol>
+                <li>Run this prompt at the end of each significant development session</li>
+                <li>Provide context about the day's achievements and changes</li>
+                <li>Review and approve the suggested documentation updates</li>
+                <li>Ensure all cross-references are maintained</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(button) {
+            const text = button.getAttribute('data-clipboard-text');
+            navigator.clipboard.writeText(text).then(() => {
+                button.classList.add('copied');
+                setTimeout(() => {
+                    button.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

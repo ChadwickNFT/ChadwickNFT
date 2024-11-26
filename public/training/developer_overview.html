@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChadwickNFT Developer Overview</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html">Documentation Home</a>
+    </nav>
+    <div class="container">
+        <h1 style="background: linear-gradient(135deg, #b388ff, #7c4dff, #4a148c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 2.8rem; letter-spacing: -0.5px; margin-bottom: 2rem;">ChadwickNFT Developer Overview</h1>
+
+        <div class="section">
+            <h2>1. Tech Stack</h2>
+            <h3>Core Technologies</h3>
+            <ul>
+                <li>React 18.3.1 (with Hooks)</li>
+                <li>React Router 6.22.2 (HashRouter for multi-platform compatibility)</li>
+                <li>Tailwind CSS 3.4.1 (with custom configuration)</li>
+                <li>Framer Motion (for animations)</li>
+            </ul>
+
+            <h3>Build Tools</h3>
+            <ul>
+                <li>Create React App (not ejected)</li>
+                <li>PostCSS with Autoprefixer</li>
+                <li>Babel with custom plugins for modern JavaScript features</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>2. Component Architecture</h2>
+            
+            <h3>Core Components</h3>
+            <ul>
+                <li><code>App.js</code>: Root component with routing setup</li>
+                <li><code>Navbar.js</code>: Responsive navigation with mobile menu</li>
+                <li><code>Home.js</code>: Landing page with hero section</li>
+                <li><code>Gallery.js</code>: Portfolio grid with masonry layout</li>
+                <li><code>ImageCarousel.js</code>: Full-screen image viewer with modal</li>
+                <li><code>BWGallery.js</code>: Black and white photography section</li>
+                <li><code>About.js</code>: Artist information page</li>
+                <li><code>Contact.js</code>: Contact form and social links</li>
+            </ul>
+
+            <h3>Utility Components</h3>
+            <ul>
+                <li><code>utils/urlUtils.js</code>: Cross-platform URL handling</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>3. Styling Architecture</h2>
+            <h3>Tailwind Configuration</h3>
+            <ul>
+                <li>Custom color palette with NFT-themed colors</li>
+                <li>Extended animation configurations</li>
+                <li>Custom breakpoints for responsive design</li>
+                <li>Typography system with custom font stack</li>
+            </ul>
+
+            <h3>Animation System</h3>
+            <ul>
+                <li>Framer Motion for page transitions</li>
+                <li>Custom hover effects</li>
+                <li>Smooth modal animations</li>
+                <li>Scroll-based navbar transformations</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>4. State Management</h2>
+            <ul>
+                <li>React Hooks for local state management</li>
+                <li>URL-based routing state</li>
+                <li>Component-specific state patterns:
+                    <ul>
+                        <li>Image carousel state for current image and modal</li>
+                        <li>Navigation state for mobile menu and scroll position</li>
+                        <li>Gallery state for masonry layout and image loading</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>5. Development Workflow</h2>
+            <h3>Local Development</h3>
+            <ul>
+                <li>Start development server: <code>npm start</code></li>
+                <li>Build for production: <code>npm run build</code></li>
+                <li>Platform-specific builds:
+                    <ul>
+                        <li>GitHub Pages: <code>npm run build:github</code></li>
+                        <li>IPFS/Fleek: <code>npm run build:fleek</code></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Code Organization</h3>
+            <ul>
+                <li><code>src/components/</code>: React components</li>
+                <li><code>src/utils/</code>: Utility functions</li>
+                <li><code>public/images/</code>: Asset directory
+                    <ul>
+                        <li><code>bw/</code>: Black and white photography</li>
+                        <li><code>thumbnails/</code>: Optimized preview images</li>
+                        <li><code>large/</code>: Full-size images</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>6. Deployment</h2>
+            <ul>
+                <li>Multi-platform deployment strategy</li>
+                <li>GitHub Actions automation</li>
+                <li>Environment-specific configurations</li>
+                <li>Cross-platform URL handling</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>7. Best Practices</h2>
+            <ul>
+                <li>Component composition over inheritance</li>
+                <li>Custom hooks for reusable logic</li>
+                <li>Responsive design first approach</li>
+                <li>Progressive enhancement</li>
+                <li>Performance optimization:
+                    <ul>
+                        <li>Image optimization pipeline</li>
+                        <li>Code splitting</li>
+                        <li>Lazy loading</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
