@@ -57,16 +57,13 @@ function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex justify-between items-center h-20 sm:h-24">
             {/* Logo */}
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.href = '/';
-              }}
+            <Link
+              to="/"
               className="text-lg sm:text-xl font-display font-bold text-gold hover:text-gold-light transition-colors duration-300 flex items-baseline cursor-pointer"
+              onClick={() => window.location.href = process.env.PUBLIC_URL + '/'}
             >
               CHADWICK<span className="text-[0.6em] font-black ml-0.5 text-nft-glow">NFT</span>
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden sm:flex items-center space-x-6">
@@ -78,18 +75,15 @@ function Navbar() {
                   onMouseLeave={() => setHoveredLink(null)}
                 >
                   {link.path === '/' ? (
-                    <a
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        window.location.href = '/';
-                      }}
+                    <Link
+                      to="/"
+                      onClick={() => window.location.href = process.env.PUBLIC_URL + '/'}
                       className={`flex items-center transition-all duration-300 ${
                         link.icon === '?' ? link.className : 'text-gold hover:text-white'
                       } ${hoveredLink && hoveredLink !== link.path ? 'opacity-16' : ''}`}
                     >
                       {link.icon}
-                    </a>
+                    </Link>
                   ) : (
                     <Link
                       to={link.path}
@@ -145,13 +139,10 @@ function Navbar() {
             <div className="px-4 pt-2 pb-3 space-y-1">
               {navLinks.map((link) => (
                 link.path === '/' ? (
-                  <a
+                  <Link
                     key={link.path}
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = '/';
-                    }}
+                    to="/"
+                    onClick={() => window.location.href = process.env.PUBLIC_URL + '/'}
                     className={`flex items-center px-3 py-2 text-base font-medium ${
                       link.icon === '?' ? link.className : 'text-gold hover:text-gold'
                     } transition-colors duration-300`}
@@ -159,7 +150,7 @@ function Navbar() {
                   >
                     {link.icon}
                     <span className="ml-2">{link.name}</span>
-                  </a>
+                  </Link>
                 ) : (
                   <Link
                     key={link.path}

@@ -2,7 +2,7 @@
   "name": "chadwicknft-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://chadwicknft.github.io/ChadwickNFT",
   "engines": {
     "node": ">=20.0.0"
   },

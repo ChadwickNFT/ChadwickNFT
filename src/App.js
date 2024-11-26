@@ -9,15 +9,17 @@ import About from './components/About';
 import Contact from './components/Contact';
 
 function App() {
+  const basename = process.env.PUBLIC_URL || '/';
+  
   return (
-    <Router>
-      <div className="min-h-screen bg-rich-black">
+    <Router basename={basename}>
+      <div className="min-h-screen bg-rich-black text-white">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/bw" element={<BWGallery />} />
           <Route path="/about" element={<About />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/bw-gallery" element={<BWGallery />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
