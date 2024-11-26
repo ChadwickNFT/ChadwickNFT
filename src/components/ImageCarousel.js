@@ -13,7 +13,7 @@ const ImageCarousel = ({ onSlideChange }) => {
   useEffect(() => {
     const bwImages = Array.from({ length: 17 }, (_, i) => {
       const src = `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-${i + 1}.jpg`;
-      const fullSizeSrc = `${process.env.PUBLIC_URL}/images/bw/full/chadwicknft_photography-${i + 1}.jpg`;
+      const fullSizeSrc = `${process.env.PUBLIC_URL}/images/bw/large/chadwicknft_photography-${i + 1}.jpg`;
       const image = new Image();
       image.src = src;
       if (image.complete) {
