@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChadwickNFT Developer Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles specific to the landing page */
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .doc-card {
+            background-color: var(--section-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .doc-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .doc-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .doc-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .doc-card h3 {
+            color: var(--text-secondary);
+            margin-top: 0;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-secondary), var(--text-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .doc-card p {
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .doc-card a {
+            color: var(--link-color);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--link-color);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            background: rgba(34, 211, 238, 0.05);
+        }
+
+        .doc-card a:hover {
+            background: rgba(34, 211, 238, 0.1);
+            border-color: var(--gradient-start);
+            transform: translateY(-2px);
+        }
+
+        .doc-card a:hover::after {
+            display: none;
+        }
+
+        @media (max-width: 640px) {
+            .doc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html">Documentation Home</a>
+    </nav>
+
+    <div class="container">
+        <h1 style="background: linear-gradient(135deg, #b388ff, #7c4dff, #4a148c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 2.8rem; letter-spacing: -0.5px; margin-bottom: 1rem; margin-top: 0.5rem;">ChadwickNFT Developer Documentation</h1>
+        
+        <div class="doc-grid">
+            <div class="doc-card inception-card">
+                <h3>🔥 Inception Prompt</h3>
+                <p>Quick initialization command for new sessions.</p>
+                <div class="code-container">
+                    <div class="code-block">
+                        <code>read prompt.html</code>
+                        <button class="copy-button" onclick="copyToClipboard(this)" data-clipboard-text="read prompt.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doc-card">
+                <h3>Developer Overview</h3>
+                <p>Overview of the project's goals, features, and implementation details.</p>
+                <a href="developer_overview.html">View Overview →</a>
+            </div>
+
+            <div class="doc-card">
+                <h3>Recent Methods</h3>
+                <p>Documentation of recent development sessions, challenges, and solutions.</p>
+                <a href="recent_methods_1.html">View Methods →</a>
+            </div>
+
+            <div class="doc-card">
+                <h3 style="background: linear-gradient(135deg, #ff4e50, #f9d423); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Prompt Initialization</h3>
+                <p>Essential prompt for initializing development sessions.</p>
+                <a href="prompt.html">View Prompt →</a>
+            </div>
+
+            <div class="doc-card">
+                <h3 style="background: linear-gradient(135deg, #1a5c2a, #34c759, #98fb98); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Continuous Prompt Engineering</h3>
+                <p>Documentation of the iterative process used to create the initialization prompt.</p>
+                <a href="pc.html">View History →</a>
+            </div>
+
+            <div class="doc-card">
+                <h3>♾️ Circular Iteration</h3>
+                <p>End-of-session documentation maintenance system</p>
+                <a href="circular_iteration.html">View System →</a>
+            </div>
+        </div>
+
+        <style>
+            .code-container {
+                margin-top: 1rem;
+                position: relative;
+            }
+
+            .code-block {
+                background: var(--bg-primary);
+                border-radius: 8px;
+                padding: 0.75rem 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-family: 'SF Mono', 'Fira Code', monospace;
+                font-weight: 300;
+            }
+
+            .copy-button {
+                background: none;
+                border: none;
+                color: var(--text-accent);
+                cursor: pointer;
+                padding: 4px;
+                border-radius: 4px;
+                transition: all 0.2s;
+            }
+
+            .copy-button:hover {
+                background: rgba(255, 255, 255, 0.1);
+                color: var(--text-primary);
+            }
+
+            .copy-button.copied {
+                color: var(--gradient-start);
+            }
+        </style>
+
+        <script>
+            function copyToClipboard(button) {
+                const text = button.getAttribute('data-clipboard-text');
+                navigator.clipboard.writeText(text).then(() => {
+                    button.classList.add('copied');
+                    setTimeout(() => {
+                        button.classList.remove('copied');
+                    }, 2000);
+                });
+            }
+        </script>
+
+    </div>
+</body>
+</html>

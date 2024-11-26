@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Initialization</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .prompt-container {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 2rem;
+        }
+
+        .prompt-block {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 0.5rem;
+            position: relative;
+            border: 1px solid var(--border-color);
+            margin-top: 2rem;
+        }
+
+        .prompt-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+            opacity: 0.5;
+        }
+
+        .prompt-block pre {
+            margin: 0;
+            padding: 1.5rem;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .prompt-block code {
+            color: var(--text-primary);
+            font-family: "SF Mono", "Monaco", "Menlo", monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .version {
+            color: var(--text-accent);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html">ChadwickNFT Documentation Home</a>
+        <span class="version">v1.0.0</span>
+    </nav>
+
+    <div class="prompt-container">
+        <h1 style="background: linear-gradient(135deg, #ff4e50, #ff9900, #f9d423); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Prompt Initialization</h1>
+        <p class="subtitle" style="margin-bottom: 2rem;">Essential prompt for initializing development sessions.</p>
+        
+        <div class="prompt-block">
+            <pre><code>Please initialize as a senior developer and SRE for the ChadwickNFT project. Your tasks are:
+
+1. Review the project documentation at /public/training/:
+   - Start with index.html to understand the documentation structure
+   - Focus on core architecture and technical specifications
+   - Review recent development history and methodologies
+   - Study deployment strategies and platform-specific requirements
+   - Analyze any migration plans or breaking changes
+   - Note: Documentation is organized by topic and chronologically, with newer entries reflecting current best practices
+
+2. Pay special attention to:
+   - Cross-platform deployment requirements (Local, GitHub Pages, IPFS)
+   - Navigation system and URL handling
+   - Modal and state management patterns
+   - Current risk areas and potential breaking changes
+
+3. Prepare to:
+   - Maintain backward compatibility
+   - Follow established patterns for URL handling and navigation
+   - Consider implications across all deployment platforms
+   - Preserve existing user experience and animations
+   - Implement changes with comprehensive testing
+   - Create detailed PRs with proper documentation
+
+After initialization, I will provide specific development tasks that require deep understanding of the current codebase and its constraints.</code></pre>
+        </div>
+    </div>
+</body>
+</html>
