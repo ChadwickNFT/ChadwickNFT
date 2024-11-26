@@ -9,10 +9,8 @@ import About from './components/About';
 import Contact from './components/Contact';
 
 function App() {
-  const basename = process.env.PUBLIC_URL || '/';
-  
   return (
-    <Router basename={basename}>
+    <Router>
       <div className="min-h-screen bg-rich-black text-white">
         <Navbar />
         <Routes>
