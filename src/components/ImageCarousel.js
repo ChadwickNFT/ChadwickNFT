@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-const ImageCarousel = ({ onSlideChange }) => {
+const ImageCarousel = ({ onSlideChange, onModalStateChange }) => {
   const [images, setImages] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const navigate = useNavigate();
+  const location = useLocation();
 
   // Initialize images
   useEffect(() => {
@@ -102,6 +103,23 @@ const ImageCarousel = ({ onSlideChange }) => {
     return baseStyles;
   };
 
+  // Handle escape key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        setSelectedImage(null);
+      }
+    };
+
+    if (selectedImage) {
+      window.addEventListener('keydown', handleEscape);
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleEscape);
+    };
+  }, [selectedImage]);
+
   return (
     <>
       <div className="relative w-full h-[40vh] sm:h-[500px] overflow-hidden bg-transparent">
@@ -127,7 +145,9 @@ const ImageCarousel = ({ onSlideChange }) => {
                   ease: [0.4, 0.0, 0.2, 1] // Custom easing for smoother slide
                 }}
                 className="cursor-pointer rounded-lg overflow-hidden border border-gold/30 hover:border-gold/60"
-                onClick={() => setSelectedImage(image)}
+                onClick={() => {
+                  setSelectedImage(image);
+                }}
                 onHoverStart={() => setIsPaused(true)}
                 onHoverEnd={() => setIsPaused(false)}
               >
@@ -159,7 +179,9 @@ const ImageCarousel = ({ onSlideChange }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center bg-rich-black bg-opacity-95 backdrop-blur-sm"
-            onClick={() => setSelectedImage(null)}
+            onClick={() => {
+              setSelectedImage(null);
+            }}
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
@@ -173,14 +195,6 @@ const ImageCarousel = ({ onSlideChange }) => {
                 alt={selectedImage.title}
                 className="w-full h-full object-contain border-2 border-gold/40 hover:border-gold/80 transition-colors duration-300"
               />
-              <button
-                className="absolute top-4 right-4 text-gold hover:text-gold-light"
-                onClick={() => setSelectedImage(null)}
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
             </motion.div>
           </motion.div>
         )}

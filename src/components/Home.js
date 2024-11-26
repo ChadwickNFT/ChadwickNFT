@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [isPulsing, setIsPulsing] = React.useState(false);
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   const handleCarouselChange = () => {
     setIsPulsing(true);
@@ -54,14 +55,19 @@ const Home = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.3 }}
           >
-            <ImageCarousel onSlideChange={handleCarouselChange} />
+            <ImageCarousel 
+              onSlideChange={handleCarouselChange} 
+              onModalStateChange={setIsModalOpen}
+            />
           </motion.div>
 
           {/* Button below */}
           <motion.div
-            className="absolute bottom-[15%] flex flex-col items-center z-10"
+            className={`absolute transition-all duration-500 ease-in-out flex flex-col items-center z-10 ${
+              isModalOpen ? 'bottom-8 opacity-75' : 'bottom-[15%] opacity-100'
+            }`}
             initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            animate={{ y: 0, opacity: isModalOpen ? 0.77 : 1 }}
             transition={{ delay: 0.8, duration: 0.3 }}
           >
             <Link

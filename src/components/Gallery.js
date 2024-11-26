@@ -1,17 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Masonry from 'react-masonry-css';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function Gallery() {
   const categories = ['All', 'B&W'];
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedImage, setSelectedImage] = useState(null);
 
+  // Handle escape key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        setSelectedImage(null);
+      }
+    };
+
+    if (selectedImage) {
+      window.addEventListener('keydown', handleEscape);
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleEscape);
+    };
+  }, [selectedImage]);
+
   // B&W photography collection
   const images = Array.from({ length: 17 }, (_, i) => ({
     id: i + 1,
-    src: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-${i + 1}.jpg`,
-    fullSrc: `${process.env.PUBLIC_URL}/images/bw/chadwicknft_photography-${i + 1}.jpg`,
+    src: {
+      thumbnail: `${process.env.PUBLIC_URL}/images/bw/thumbnails/chadwicknft_photography-${i + 1}.jpg`,
+      medium: `${process.env.PUBLIC_URL}/images/bw/medium/chadwicknft_photography-${i + 1}.jpg`,
+      large: `${process.env.PUBLIC_URL}/images/bw/large/chadwicknft_photography-${i + 1}.jpg`,
+    },
     category: 'B&W',
     title: `Black & White ${i + 1}`,
   }));
@@ -66,7 +86,9 @@ function Gallery() {
             >
               <div className="relative group overflow-hidden rounded-lg touch-manipulation">
                 <img
-                  src={image.src}
+                  src={image.src.thumbnail}
+                  srcSet={`${image.src.thumbnail} 400w, ${image.src.medium} 800w`}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   alt={image.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 border border-gold/30 group-hover:border-2 group-hover:border-gold/80"
                   loading="lazy"
@@ -77,31 +99,42 @@ function Gallery() {
         </Masonry>
 
         {/* Fullscreen Image Modal */}
-        {selectedImage && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4"
-            onClick={() => setSelectedImage(null)}
-          >
-            <div className="relative w-full max-w-6xl mx-auto">
-              <img
-                src={selectedImage.fullSrc}
-                alt={selectedImage.title}
-                className="w-full h-full object-contain border-2 border-gold/40 hover:border-gold/80 transition-colors duration-300"
-              />
-              <button
-                className="absolute top-4 right-4 text-white/80 hover:text-white"
-                onClick={() => setSelectedImage(null)}
+        <AnimatePresence>
+          {selectedImage && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 flex items-center justify-center bg-rich-black bg-opacity-95 backdrop-blur-sm"
+              onClick={() => setSelectedImage(null)}
+            >
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                className="relative max-w-7xl max-h-[90vh] mx-4"
+                onClick={(e) => e.stopPropagation()}
               >
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-          </motion.div>
-        )}
+                <img
+                  src={selectedImage.src.large}
+                  alt={selectedImage.title}
+                  className="w-full h-full object-contain border-2 border-gold/40 hover:border-gold/80 transition-colors duration-300"
+                />
+                <button
+                  className="absolute top-4 right-4 text-gold hover:text-gold-light"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedImage(null);
+                  }}
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

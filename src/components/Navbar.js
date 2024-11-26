@@ -57,12 +57,16 @@ function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex justify-between items-center h-20 sm:h-24">
             {/* Logo */}
-            <Link
-              to="/"
-              className="text-lg sm:text-xl font-display font-bold text-gold hover:text-gold-light transition-colors duration-300 flex items-baseline"
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = '/';
+              }}
+              className="text-lg sm:text-xl font-display font-bold text-gold hover:text-gold-light transition-colors duration-300 flex items-baseline cursor-pointer"
             >
               CHADWICK<span className="text-[0.6em] font-black ml-0.5 text-nft-glow">NFT</span>
-            </Link>
+            </a>
 
             {/* Desktop Navigation */}
             <div className="hidden sm:flex items-center space-x-6">
@@ -73,14 +77,29 @@ function Navbar() {
                   onMouseEnter={() => setHoveredLink(link.path)}
                   onMouseLeave={() => setHoveredLink(null)}
                 >
-                  <Link
-                    to={link.path}
-                    className={`flex items-center transition-all duration-300 ${
-                      link.icon === '?' ? link.className : 'text-gold hover:text-white'
-                    } ${hoveredLink && hoveredLink !== link.path ? 'opacity-16' : ''}`}
-                  >
-                    {link.icon}
-                  </Link>
+                  {link.path === '/' ? (
+                    <a
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href = '/';
+                      }}
+                      className={`flex items-center transition-all duration-300 ${
+                        link.icon === '?' ? link.className : 'text-gold hover:text-white'
+                      } ${hoveredLink && hoveredLink !== link.path ? 'opacity-16' : ''}`}
+                    >
+                      {link.icon}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.path}
+                      className={`flex items-center transition-all duration-300 ${
+                        link.icon === '?' ? link.className : 'text-gold hover:text-white'
+                      } ${hoveredLink && hoveredLink !== link.path ? 'opacity-16' : ''}`}
+                    >
+                      {link.icon}
+                    </Link>
+                  )}
                   {hoveredLink === link.path && (
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
@@ -100,20 +119,14 @@ function Navbar() {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="sm:hidden text-white hover:text-gold transition-colors duration-300"
+              className="sm:hidden text-gold hover:text-gold-light transition-colors duration-300"
             >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
-                />
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                {isOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
               </svg>
             </button>
           </div>
@@ -131,17 +144,35 @@ function Navbar() {
           >
             <div className="px-4 pt-2 pb-3 space-y-1">
               {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`flex items-center px-3 py-2 text-base font-medium ${
-                    link.icon === '?' ? link.className : 'text-gold hover:text-gold'
-                  } transition-colors duration-300`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.icon}
-                  <span className="ml-2">{link.name}</span>
-                </Link>
+                link.path === '/' ? (
+                  <a
+                    key={link.path}
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = '/';
+                    }}
+                    className={`flex items-center px-3 py-2 text-base font-medium ${
+                      link.icon === '?' ? link.className : 'text-gold hover:text-gold'
+                    } transition-colors duration-300`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.icon}
+                    <span className="ml-2">{link.name}</span>
+                  </a>
+                ) : (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={`flex items-center px-3 py-2 text-base font-medium ${
+                      link.icon === '?' ? link.className : 'text-gold hover:text-gold'
+                    } transition-colors duration-300`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.icon}
+                    <span className="ml-2">{link.name}</span>
+                  </Link>
+                )
               ))}
             </div>
           </motion.div>
