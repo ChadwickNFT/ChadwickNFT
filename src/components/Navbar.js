@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { getBaseUrl } from '../utils/urlUtils';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -60,7 +61,7 @@ function Navbar() {
             <Link
               to="/"
               className="text-lg sm:text-xl font-display font-bold text-gold hover:text-gold-light transition-colors duration-300 flex items-baseline cursor-pointer"
-              onClick={() => window.location.href = process.env.PUBLIC_URL + '/'}
+              onClick={() => window.location.href = window.location.origin + getBaseUrl()}
             >
               CHADWICK<span className="text-[0.6em] font-black ml-0.5 text-nft-glow">NFT</span>
             </Link>
@@ -77,7 +78,7 @@ function Navbar() {
                   {link.path === '/' ? (
                     <Link
                       to="/"
-                      onClick={() => window.location.href = process.env.PUBLIC_URL + '/'}
+                      onClick={() => window.location.href = window.location.origin + getBaseUrl()}
                       className={`flex items-center transition-all duration-300 ${
                         link.icon === '?' ? link.className : 'text-gold hover:text-white'
                       } ${hoveredLink && hoveredLink !== link.path ? 'opacity-16' : ''}`}
@@ -142,11 +143,13 @@ function Navbar() {
                   <Link
                     key={link.path}
                     to="/"
-                    onClick={() => window.location.href = process.env.PUBLIC_URL + '/'}
+                    onClick={() => {
+                      window.location.href = window.location.origin + getBaseUrl();
+                      setIsOpen(false);
+                    }}
                     className={`flex items-center px-3 py-2 text-base font-medium ${
                       link.icon === '?' ? link.className : 'text-gold hover:text-gold'
                     } transition-colors duration-300`}
-                    onClick={() => setIsOpen(false)}
                   >
                     {link.icon}
                     <span className="ml-2">{link.name}</span>
