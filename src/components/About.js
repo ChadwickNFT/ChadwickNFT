@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { getBaseUrl } from '../utils/urlUtils';
 
 function About() {
   return (
@@ -14,7 +15,9 @@ function About() {
           {/* About Section */}
           <section className="text-center">
             <h1 className="text-4xl sm:text-5xl font-display font-bold text-gold mb-8">
-              ABOUT
+              <a href={`${getBaseUrl()}training/index.html`} className="hover:text-gold">
+                ABOUT
+              </a>
             </h1>
             <p className="text-white/90 text-lg leading-relaxed max-w-2xl mx-auto">
               Photographer and digital artist exploring the intersection of traditional photography 
