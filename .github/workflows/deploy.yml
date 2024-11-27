@@ -26,8 +26,13 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Clean npm cache
+        run: npm cache clean --force
+
       - name: Install Dependencies
-        run: npm install --legacy-peer-deps
+        run: |
+          npm install --legacy-peer-deps
+          npm install react-icons --save --legacy-peer-deps
 
       - name: Build
         run: CI=false npm run build:github
