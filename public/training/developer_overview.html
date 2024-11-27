@@ -125,7 +125,33 @@
         </div>
 
         <div class="section">
-            <h2>7. Best Practices</h2>
+            <h2>7. Development Environment Setup</h2>
+            <h3>Local Development</h3>
+            <ul>
+                <li>Node.js 20+ required</li>
+                <li>Use <code>npm install --legacy-peer-deps</code> for dependency installation</li>
+                <li>Some packages (e.g., react-icons) may need separate installation</li>
+                <li>Use <code>npm start</code> for development server</li>
+            </ul>
+
+            <h3>GitHub Actions Deployment</h3>
+            <ul>
+                <li>Runs on Ubuntu latest with Node.js 20</li>
+                <li>Always uses --legacy-peer-deps flag</li>
+                <li>Uses CI=false flag to ignore warnings</li>
+                <li>Runs build:github script for proper base path</li>
+            </ul>
+
+            <h3>Key Differences</h3>
+            <ul>
+                <li>Clean environment in GitHub Actions vs. local cached dependencies</li>
+                <li>Different base paths between local and deployed versions</li>
+                <li>Stricter build requirements in GitHub Actions</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>8. Best Practices</h2>
             <ul>
                 <li>Component composition over inheritance</li>
                 <li>Custom hooks for reusable logic</li>
