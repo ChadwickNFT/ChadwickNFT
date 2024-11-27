@@ -1,8 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { getBaseUrl } from '../utils/urlUtils';
+import { FaLinkedin } from 'react-icons/fa';
 
 function About() {
+  const socialLinks = [
+    {
+      name: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/chadwick-radunske/',
+      icon: <FaLinkedin className="text-2xl" />
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-rich-black pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
@@ -36,18 +45,18 @@ function About() {
                 </p>
               </div>
               
-              <div className="flex justify-center">
-                <a
-                  href="https://twitter.com/chadwicknft"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-gold transition-colors duration-300"
-                >
-                  <span className="sr-only">X (formerly Twitter)</span>
-                  <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                  </svg>
-                </a>
+              <div className="flex justify-center space-x-4">
+                {socialLinks.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-gold transition-colors duration-300"
+                  >
+                    {link.icon}
+                  </a>
+                ))}
               </div>
             </div>
           </section>
