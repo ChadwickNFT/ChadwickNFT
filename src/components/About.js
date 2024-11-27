@@ -1,15 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { getBaseUrl } from '../utils/urlUtils';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
 
 function About() {
   const socialLinks = [
-    {
-      name: 'GitHub',
-      url: 'https://github.com/ChadwickNFT',
-      icon: <FaGithub className="text-2xl" />
-    },
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/chadwick-radunske/',
