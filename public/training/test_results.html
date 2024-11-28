@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Test Results</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --gradient-start: #ff4e50;
+            --gradient-mid: #ff9900;
+            --gradient-end: #f9d423;
+            --text-accent: #ff9900;
+        }
+
+        .title {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 2rem;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .context-entries {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .collapsible {
+            background: #1a1a1a;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .collapsible-header {
+            padding: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(255, 78, 80, 0.1), rgba(255, 153, 0, 0.1));
+        }
+
+        .collapsible-content {
+            padding: 0 1rem 1rem;
+            display: none;
+        }
+
+        .collapsible.active .collapsible-content {
+            display: block;
+        }
+
+        .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .section {
+            margin: 1.5rem 0;
+        }
+
+        .section h3 {
+            color: var(--text-accent);
+            margin-bottom: 1rem;
+        }
+
+        .control-system {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+
+        .control-system h4 {
+            color: var(--gradient-mid);
+            margin: 0 0 0.5rem 0;
+        }
+
+        .control-system p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .prompt-container {
+            margin: 2rem 0;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+
+        .code-block {
+            position: relative;
+            background: #000;
+            border-radius: 4px;
+            padding: 1rem;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: none;
+            border: none;
+            color: var(--text-accent);
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .copy-button:hover {
+            color: var(--gradient-start);
+        }
+
+        code {
+            display: block;
+            white-space: pre-wrap;
+            color: #f8f8f2;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html">ChadwickNFT Documentation Home</a>
+        <span class="version">v1.0.0</span>
+    </nav>
+
+    <div class="container">
+        <h1 class="title">Engineering Test Results</h1>
+
+        <div class="context-entries">
+            <div class="collapsible">
+                <div class="collapsible-header">
+                    <h2 style="margin: 0; background: linear-gradient(135deg, #ff4e50, #ff9900, #f9d423); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Current Context - WS_CASCADE_2024_01_17_1421_A001</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="section">
+                        <h3>Project Environment</h3>
+                        <ul>
+                            <li>Working Directory: <code>/Users/chadwick.radunske/Desktop/CascadeProjects/personal-website/chadwicknft-site</code></li>
+                            <li>Current Branch: <code>feature/test-github-identity</code></li>
+                            <li>GitHub Identity: <code>ChadwickNFT</code></li>
+                            <li>Active File: <code>test.md</code> (Line 1)</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <h3>Development Control Systems</h3>
+                        
+                        <div class="control-system">
+                            <h4>CONTROL-001: Change Preview System</h4>
+                            <p>Pre-execution change outlines, impact assessment, modification scope definition, and change preview validation</p>
+                        </div>
+                        
+                        <div class="control-system">
+                            <h4>CONTROL-002: Branch Management Protocol</h4>
+                            <p>Feature branch creation standards, remote synchronization, naming conventions, and merge conflict procedures</p>
+                        </div>
+                        
+                        <div class="control-system">
+                            <h4>CONTROL-003: Multi-Step Operations Handler</h4>
+                            <p>Step-by-step tracking, rollback capability, operation state management, and error recovery</p>
+                        </div>
+                        
+                        <div class="control-system">
+                            <h4>CONTROL-004: Continuous Prompt Engineering</h4>
+                            <p>Pattern documentation, effectiveness metrics, iterative improvement, and best practices integration</p>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3>Critical Focus Areas</h3>
+                        <ul>
+                            <li>Cross-platform deployment requirements (Local, GitHub Pages, IPFS)</li>
+                            <li>Navigation system and URL handling patterns</li>
+                            <li>Modal and state management patterns</li>
+                            <li>Backward compatibility maintenance</li>
+                            <li>User experience and animation preservation</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <h3>Available Documentation</h3>
+                        <ul>
+                            <li><code>developer_overview.html</code> - Core architecture and technical specifications</li>
+                            <li><code>recent_methods_1.html</code> - Development history and methodologies</li>
+                            <li><code>pc.html</code> - Prompt engineering evolution</li>
+                            <li><code>circular_iteration.html</code> - End-of-session documentation system</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="prompt-container" style="margin-top: 3rem;">
+            <p style="color: #CCCCCC; margin-bottom: 1rem; font-size: 0.9rem; opacity: 0.9; text-align: left; padding-left: 1.5rem;"><strong>Note</strong>: use this prompt to test context retrieval abilities</p>
+            <div class="code-block">
+                <button class="copy-button" onclick="copyPrompt(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                </button>
+                <pre><code>now, imagine you didn't have any context at all (just for this interaction), would you be able to find what I'm looking for if I said "find context WS_CASCADE_2024_01_17_1421_A001".  walk me throught the steps you would do to achieve that.   Be sure that you don't go beyond what you found in that entry and go looking for any further context once you've found it.</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.collapsible').forEach(collapsible => {
+            collapsible.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.querySelector('.collapsible-content');
+                content.classList.toggle('active');
+            });
+        });
+
+        function copyPrompt(button) {
+            const codeBlock = button.parentElement.querySelector('code');
+            navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+                button.style.color = 'var(--gradient-start)';
+                setTimeout(() => {
+                    button.style.color = 'var(--text-accent)';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
